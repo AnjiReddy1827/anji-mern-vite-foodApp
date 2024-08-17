@@ -9,6 +9,9 @@ import {
   fetchTotalPrice,
 } from "../redux/config";
 import axios from "axios";
+import { VITE_API_URL } from "../api";
+
+const apiURL = VITE_API_URL;
 
 // Define the Item interface
 export interface Item {
@@ -29,7 +32,6 @@ const ProductList: React.FC<ProductListProps> = ({ dataItems }) => {
   const {  addedCart } = useSelector(
     (state: RootState) => state.cart
   );
-  const apiURL = import.meta.env.VITE_API_URL;
 
   const handleAddCart = async (item: Item) => {
     if (item._id === undefined || item._id === null) {

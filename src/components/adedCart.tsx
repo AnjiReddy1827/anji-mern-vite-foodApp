@@ -6,6 +6,9 @@ import { RootState } from "../redux/store";
 import { AppDispatch } from "../redux/store";
 import { fetchAdedCart, fetchTotalPrice } from "../redux/config";
 import axios from "axios";
+import { VITE_API_URL } from "../api";
+
+const apiURL = VITE_API_URL;
 
 // export interface CartItems {
 //   id: number;
@@ -26,7 +29,6 @@ export interface CartItem {
 }
 
 const AddedCart: React.FC<any> = ({ cartItems }) => {
-  const apiURL = import.meta.env.VITE_API_URL;
   const dispatch: AppDispatch = useDispatch();
   const { totalPrice } = useSelector((state: RootState) => state.cart);
 

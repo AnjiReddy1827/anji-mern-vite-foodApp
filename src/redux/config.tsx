@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-const apiURL = import.meta.env.VITE_API_URL;
+import { VITE_API_URL } from "../api";
+
+const apiURL = VITE_API_URL;
 
 export interface CartItem {
   id: string;

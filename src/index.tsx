@@ -8,8 +8,9 @@ import { fetchAdedCart, fetchTotalPrice } from "./redux/config";
 import { AppDispatch } from "./redux/store";
 import axios from "axios";
 import { Item } from "./components/productList";
+import { VITE_API_URL } from "./api";
 
-const apiURL = import.meta.env.VITE_API_URL;
+const apiURL = VITE_API_URL;
 
 const Products: React.FC = () => {
   const [loading, setLoading] = useState(true);

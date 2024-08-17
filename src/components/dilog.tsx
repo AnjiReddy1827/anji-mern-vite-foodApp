@@ -5,6 +5,9 @@ import { RootState } from "../redux/store";
 import axios from "axios";
 import { AppDispatch } from "../redux/store";
 import { fetchAdedCart, fetchTotalPrice } from "../redux/config";
+import { VITE_API_URL } from "../api";
+
+const apiURL = VITE_API_URL;
 
 interface DialogDemoProps {
   show: boolean; // Show state to control the visibility of the modal
@@ -12,7 +15,6 @@ interface DialogDemoProps {
 }
 
 const DialogDemo: React.FC<DialogDemoProps> = ({ show, onClose }) => {
-  const apiURL = import.meta.env.VITE_API_URL;
   const { addedCart, totalPrice } = useSelector(
     (state: RootState) => state.cart
   );
